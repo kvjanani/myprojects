@@ -1,7 +1,6 @@
 export default function Skills() {
   const skills = [
     
-
     "TypeScript",
     "Next.js",
     "Tailwind CSS",
