@@ -10,11 +10,17 @@ export default function Projects() {
         <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-6 rounded-3xl shadow-2xl text-white hover:scale-105 transition">
 
           <h3 className="text-2xl font-bold">
-            Phishing Email Detector
+            Smart Crop Advisory System for Small and Marginal Farmers
           </h3>
 
           <p className="mt-4">
-            Detects phishing emails using Machine Learning techniques.
+           Technology Stack-
+            Frontend-
+            Next.js,
+            React,
+            Tailwind CSS.
+            Backend-
+            Node.js
           </p>
 
         </div>

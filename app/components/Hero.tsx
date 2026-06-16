@@ -26,17 +26,7 @@ export default function Hero() {
               user-friendly web applications using React,
               Next.js, TypeScript and Tailwind CSS.
             </p>
-
-            <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-              <button className="bg-white text-purple-700 px-6 py-3 rounded-xl font-bold hover:scale-105 transition duration-300">
-                View Projects
-              </button>
-
-              <button className="border-2 border-white text-white px-6 py-3 rounded-xl font-bold hover:bg-white hover:text-purple-700 transition duration-300">
-                Contact Me
-              </button>
             </div>
-          </div>
 
           {/* Right Image */}
           <div className="relative">
