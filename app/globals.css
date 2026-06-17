@@ -1,21 +1,153 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.bubbles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
+.bubbles span {
+  position: absolute;
+  bottom: -100px;
+  width: 25px;
+  height: 25px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  animation: bubble 12s linear infinite;
+}
 
+.bubbles span:nth-child(1){left:10%; animation-duration:8s;}
+.bubbles span:nth-child(2){left:20%; animation-duration:12s;}
+.bubbles span:nth-child(3){left:35%; animation-duration:10s;}
+.bubbles span:nth-child(4){left:50%; animation-duration:15s;}
+.bubbles span:nth-child(5){left:65%; animation-duration:9s;}
+.bubbles span:nth-child(6){left:75%; animation-duration:13s;}
+.bubbles span:nth-child(7){left:85%; animation-duration:11s;}
+.bubbles span:nth-child(8){left:95%; animation-duration:14s;}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(2);
+    opacity: 0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Card Shine Effect */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  100% {
+    left: 150%;
+  }
+}
+/* Title Animation */
+@keyframes titleFloat {
+  0%,100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+h1 {
+  animation: titleFloat 3s ease-in-out infinite;
+}
+
+/* Card Hover Animation */
+a {
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Icon Animation */
+a div {
+  transition: all 0.4s ease;
+}
+
+a:hover div {
+  transform: rotate(10deg) scale(1.2);
+}
+/* Title Animation */
+@keyframes titleFloat {
+  0%,100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+h1 {
+  animation: titleFloat 3s ease-in-out infinite;
+}
+
+/* Card Hover Animation */
+a {
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Icon Animation */
+a div {
+  transition: all 0.4s ease;
+}
+a:hover {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+a:hover {
+  animation: pulseGlow 1s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px white;
+  }
+  50% {
+    box-shadow: 0 0 25px white,
+                0 0 40px #ff00ff;
+  }
+  100% {
+    box-shadow: 0 0 5px white;
+  }
 }
